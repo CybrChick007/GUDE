@@ -1,0 +1,26 @@
+html {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  grid-template-areas: "header header header"
+                       ""
+                       "";
+  height: 100vh;
+  width: 100vw;
+
+  /* background-image: url(bookshelf.jpg);
+  background-size: cover;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: bottom right, left, right; */
+  margin:0;
+  padding:10px;
+}
+
+h1{
+
+}
+
+h2{
+
+}
