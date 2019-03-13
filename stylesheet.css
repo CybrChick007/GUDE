@@ -1,26 +1,67 @@
-html {
+body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-
-  grid-template-areas: "header header header"
-                       ""
-                       "";
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "title title title"
+    "info photos riddles"
+    "info photos map"
+    "news photos map";
   height: 100vh;
   width: 100vw;
 
-  /* background-image: url(bookshelf.jpg);
-  background-size: cover;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: bottom right, left, right; */
-  margin:0;
-  padding:10px;
+  margin: 0;
+  padding: 30px;
+
+background: #EFEFBB;
+background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
+background: linear-gradient(to right, #D7DDE8, #757F9A);
+
+
+
 }
 
-h1{
-
+h1 {
+  font-family: Arvo, serif;
+  font-size: 250%;
+  text-align: center;
 }
 
-h2{
+h2 {
+  font-family: Arvo, serif;
+  font-size: 170%;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 200;
+  line-height: 26.4px;
+}
 
+h3 {
+  font-family: 'Yellowtail', cursive;
+  font-size: 175%;
+  text-align: center;
+}
+
+.title {
+  grid-area: title;
+}
+
+.search {
+  grid-area: title;
+  text-align: right;
+}
+
+.info {
+  grid-area: info;
+}
+
+.map {
+  grid-area: map;
+}
+
+.news {
+  grid-area: news;
+}
+
+.photos {
+  grid-area: photos;
 }
