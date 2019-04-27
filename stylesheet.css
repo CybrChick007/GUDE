@@ -1,23 +1,18 @@
 body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 1fr, repeat(3, 2fr);
   grid-template-areas: "title title title"
     "info photos riddles"
     "info photos map"
     "news photos map";
-  height: 100vh;
-  width: 100vw;
-
+  /* height: 100vh;
+  width: 100vw; */
   margin: 0;
-  padding: 30px;
-
-background: #EFEFBB;
-background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
-background: linear-gradient(to right, #D7DDE8, #757F9A);
-
-
-
+  padding: 20px;
+  background: #EFEFBB;
+  background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
+  background: linear-gradient(to right, #D7DDE8, #757F9A);
 }
 
 h1 {
@@ -36,11 +31,17 @@ h2 {
 }
 
 h3 {
-  font-family: 'Yellowtail', cursive;
+font-family: 'Yellowtail', cursive;
   font-size: 175%;
   text-align: center;
 }
-
+/* grid positions */
+p {
+  font-family: Arvo, serif;
+  text-align: center;
+  padding-right: 10%;
+  line-height: 2em;
+}
 .title {
   grid-area: title;
 }
@@ -64,4 +65,199 @@ h3 {
 
 .photos {
   grid-area: photos;
+}
+
+.riddles {
+  grid-area: riddles;
+}
+
+
+#searchbutton {
+  background-color: #00AAFF;
+  box-shadow: 2px 3px 0 darkblue;
+  color: black;
+  padding: 0.5em 0.75em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#searchbutton:hover {
+  background-color: #00A0FF;
+}
+
+#searchbutton:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+
+.howToPlayList {
+  font-family: Arvo, serif;
+  text-align: left;
+  padding-right: 10%;
+  line-height: 2em;
+}
+
+.userPhotos {
+  align-content: center;
+}
+
+
+/* --------- nav -------- */
+
+.navigation {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+  padding: 11px 0 0 9px;
+  border-radius: 75%;
+  border: 1px solid rgba(0,40,60,.2);
+  tap-highlight-color: transparent;
+}
+span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: rgb(0,40,60);
+  transition: .7s;
+  pointer-events: none;
+}
+span:nth-child(2) {
+  margin: 3px 0;
+}
+.open {
+  border-color: rgba(255,255,255,.2);
+}
+.open span {
+  background: #fff;
+}
+.open :first-child {
+  transform: translateY(5px) rotate(-45deg);
+}
+.open :nth-child(2) {
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+.open :last-child {
+  transform: translateY(-5px) rotate(-135deg);
+}
+nav {
+  position: absolute;
+  width: 200px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #ADD8E6;
+  transform: translateX(-100%);
+  transition: .5s;
+}
+.open + nav {
+  transform: none;
+}
+
+code {
+  color: transparent;
+  font-size: 0;
+}
+
+/* toggle switches */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+/**
+ * Switch Styles
+ */
+
+/* Variables */
+@switch-transition-duration: 0.25s;
+@switch-transition-timing-function: ease;
+
+@switch-label-width: 48px;
+@switch-label-height: 24px;
+
+@switch-rail-width: 100%;
+@switch-rail-height: 100%;
+@switch-rail-background-color: #dedede;
+@switch-rail-border-radius: 9999em;
+@switch-rail-checked-background-color: #89c12d;
+
+@switch-knob-width: 24px;
+@switch-knob-height: 24px;
+@switch-knob-border-radius: 50%;
+@switch-knob-background-color: #fff;
+@switch-knob-box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+@switch-knob-checked-left: @switch-knob-width;
+
+/* Switch Container */
+.switch {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide the checkbox input (only needed for `:checked` property) */
+.switch-input {
+  display: none;
+}
+
+/* Switch */
+.switch-label {
+  display: block;
+  width: @switch-label-width;
+  height: @switch-label-height;
+  text-indent: -150%;
+  clip: rect(0 0 0 0);
+  color: transparent;
+  user-select: none;
+
+  /* Switch Rail & Knob */
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  /* Switch Rail */
+  &:before {
+    width: @switch-rail-width;
+    height: @switch-rail-height;
+    background-color: @switch-rail-background-color;
+    border-radius: @switch-rail-border-radius;
+    transition: background-color @switch-transition-duration @switch-transition-timing-function;
+  }
+
+  /* Switch Knob */
+  &:after {
+    top: 0;
+    left: 0;
+    width: @switch-knob-width;
+    height: @switch-knob-height;
+    border-radius: @switch-knob-border-radius;
+    background-color: @switch-knob-background-color;
+    box-shadow: @switch-knob-box-shadow;
+    transition: left @switch-transition-duration @switch-transition-timing-function;
+  }
+}
+
+/* When input is checked */
+.switch-input:checked + .switch-label {
+  /* Switch Rail */
+  &:before {
+    background-color: @switch-rail-checked-background-color;
+  }
+
+  /* Switch Knob */
+  &:after {
+    left: @switch-knob-checked-left;
+  }
 }

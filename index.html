@@ -12,18 +12,61 @@
 
 
 <body>
+  <section >
+  <a class="navigation" href=#>
+  <span></span>
+  <span></span>
+  <span></span>
+  </a>
+
+  <nav>
+    <h3>Authors</h3>
+    <ul class="authors">
+      <li><a href="#">Jane Austen</a></li>
+      <li><a href="#">Charles Dickens</a></li>
+      <li><a href="#">H.G.Wells</a></li>
+      <li><a href="#">Charlotte Bronte</a></li>
+      <li><a href="#">Mary Shelley</a></li>
+    </ul>
+
+    <h3>Settings</h3>
+    <ul class="settings">
+      <li><a href="#">Account Settings</a></li>
+      <li>Dark Mode<input id="switch-1" type="checkbox" class="switch-input">
+      <label for="switch-1" class="switch-label">Switch</label></li>
+      <li>Large Text<input id="switch-2" type="checkbox" class="switch-input">
+      <label for="switch-2" class="switch-label">Switch</label></li>
+    </ul>
+  </nav>
+
+  <div class="demo">
+  <form action="#">
+    <div class="switch">
+      <input id="switch-1" type="checkbox" class="switch-input">
+      <label for="switch-1" class="switch-label">Switch</label>
+    </div>
+  </form>
+</div>
+
+  <code>
+    clicking on "a" toggles class "open" on "a"
+  </code>
+</section>
+
+
   <section class="title">
     <h1>Bookology</h1>
     <h3>Let's take a literary trip</h3>
   </section>
 
   <div class="search">
-    <label for="searchBar">Search</label>
-    <input type="text" name="searchBar" value="Search">
+    <input type="textarea" name="searchBar" value="">
+    <a href="faq.html" id="searchbutton">Search</a>
   </div>
 
   <section class="riddles">
-    <h2>Riddles</h2>
+    <h2>Daily Riddle</h2>
+      <p>"Why is a raven like a writing desk?"</p>
   </section>
 
   <!-- <section class="leaderboard">
@@ -32,18 +75,55 @@
 
   <section class="map">
     <h2>Map</h2>
+    <div class="mapouter">
+      <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=portsmouth&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps
+        Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div>
+      <style>
+        .mapouter {
+          position: relative;
+          text-align: right;
+          height: 600px;
+          width: 500px;
+        }
+        .gmap_canvas {
+          overflow: hidden;
+          background: none !important;
+          height: 600px;
+          width: 500px;
+        }
+      </style>
+    </div>
   </section>
 
   <section class="info">
     <h2>Info</h2>
+    <p class="howToPlay">Welcome to Bookology.<br>
+      Your guide to the hidden and secret lives of the world's greatest authors.<br>
+      This is a game of stories and riddles.<br> Simply:</p>
+      <ol>
+        <li class="howToPlayList">Pick your author from the list</li>
+        <li class="howToPlayList">The first riddle will be reveled to you</li>
+        <li class="howToPlayList">Solve the riddle and it will lead you to a location</li>
+      </ol>
+    <p class="howToPlay">Upon arriving at said location, make sure you GPS on your mobile is
+      active, and your prize will be automatically reveled to you, along with the next riddle.
+    </p>
   </section>
 
   <section class="news">
     <h2>News</h2>
+    <textarea name="newsUpdates" rows="20" cols="40"></textarea>
   </section>
 
   <section class="photos">
-    <h2>Photos</h2>
+    <h2>Community Photos</h2>
+    <div class="userPhotos">
+      <!-- <img src="media/photo1.jpg" alt="" width="40%" height="60%"> -->
+      <img src="media/photo2.jpg" alt="" width="50%" height="60%">
+      <img src="media/photo3.jpg" alt="" width="50%" height="50%">
+      <img src="media/photo4.jpg" alt="" width="50%" height="50%">
+      <img src="media/photo5.jpg" alt="" width="50%" height="50%">
+    </div>
   </section>
 </body>
 
